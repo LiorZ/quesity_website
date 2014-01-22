@@ -1,3 +1,44 @@
+@font-face {
+	font-family: YehudaLight;
+	src: url('/fonts/yehudaclm-light-webfont.ttf');
+}
+@font-face {
+	font-family: YehudaBold;
+	src: url('/fonts/yehudaclm-bold-webfont.ttf');
+}
+@font-face {
+	font-family: HadasimRegular;
+	src: url('/fonts/hadasimclm-regular-webfont.ttf');
+}
+
+
+
+@font-face {
+	font-family: AlefRegular;
+	src: url('/fonts/Alef-regular.ttf');
+}
+
+body {
+	font-family: AlefRegular;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/*- See more at: http://avexdesigns.com/responsive-youtube-embed/#sthash.W6sMt4Vz.dpuf*/
+
 .responsive-slider-parallax {
   max-width: 100%;
   position: relative;
@@ -10,7 +51,7 @@
 .responsive-slider-parallax .slides-container {
   position: relative;
   overflow: hidden;
-  background-image: url(../img/background-paralax.jpg);
+  background-image: url(../img/background-quesity.png);
   background-size: cover;
   background-position: 0 0;
   cursor: move;
@@ -349,6 +390,7 @@
 a,
 .btn-link {
   color: #1d6fa5;
+  font-family: YehudaBold;
 }
 a:hover,
 .btn-link:hover {
@@ -428,7 +470,7 @@ footer [class*="col-"] {
 h1,
 h2,
 h3 {
-  font-family: "Dosis", sans-serif;
+  font-family: "YehudaBold", sans-serif;
 }
 .lead {
   font-size: 18px;
@@ -444,6 +486,11 @@ h3 {
 .pagination li a:hover a,
 .pagination li a:hover .btn-link {
   color: #cce5f6;
+}
+.quesity-logo-inline {
+	display:inline !important;
+	height:1.3em;
+	margin: 0px !important;
 }
 .pagination li a:hover a:hover,
 .pagination li a:hover .btn-link:hover {
@@ -530,6 +577,8 @@ h3 {
   padding-bottom: 30px;
   -webkit-transition: padding .5s;
   transition: padding .5s;
+  font-family: YehudaLight;
+  font-size:1.5em;
   /*&:after {
 					content: "";
 					display: block;
@@ -679,6 +728,9 @@ h3 {
 .breadcrumbs-container {
   margin-top: 80px;
 }
+.content.info {
+	padding-left:1em;
+}
 .breadcrumbs-container .breadcrumb {
   border-radius: 0;
   background: transparent;
@@ -789,6 +841,10 @@ h3 {
 .info-thumbnail.popular .caption {
   padding-bottom: 35px;
 }
+.description {
+	font-family: AlefRegular;
+	font-size: 1.4em;
+}
 .info-thumbnail.popular .caption .description {
   margin-bottom: 25px;
 }
@@ -890,7 +946,7 @@ h3 {
 }
 .info-thumbnail .caption .buttons {
   margin-bottom: 0;
-  text-align: right;
+  text-align: left;
 }
 .info-thumbnail-link:hover {
   text-decoration: none;
@@ -1068,6 +1124,10 @@ footer hr {
   margin: 10px 0 10px 0;
   border-radius: 4px;
 }
+
+.info-head {
+	font-family: YehudaBold;
+}
 .content img.pull-left {
   display: inline;
   margin: 10px 10px 10px 0;
@@ -1078,6 +1138,7 @@ footer hr {
 }
 .content p:last-child {
   margin-bottom: 0;
+  font-size: 1.5em;
 }
 .http-error {
   font-size: 26px;
@@ -1302,11 +1363,23 @@ footer hr {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  
+  .content.link {
+  	display:block;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  
+	.content.info {
+  		width:60%;
+  	}
+  .content.link {
+  	width:40%;
+  }
 }
 @media (min-width: 1200px) {
-  
+	.content.info {
+  		width:60%;
+  	}
+  	.content.link {
+  	width:40%;
+  }
 }
