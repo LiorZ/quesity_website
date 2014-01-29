@@ -78,9 +78,18 @@
         if (this.options.parallax) {
           this.currentBgPosition = parseInt(r.$rel.css('background-position'));
           this.moveStartScroll = parseInt(this.$rel.scrollLeft(), 10);
+          var prev_position = -1;
           step = function() {
             var position;
             position = Math.round(r.currentBgPosition - (r.moveStartScroll - this.scrollLeft) * r.options.parallaxDistance * r.options.parallaxDirection) + 'px 0';
+            if ( position != prev_position) {
+            	console.log("Position: " + position);
+            	console.log("CurrentBgPosition: " +  r.currentBgPosition);
+            	console.log("MoveStartScroll " + r.moveStartScroll);
+            	console.log("Scrolleft: " + this.scrollLeft);
+            	console.log("direction" +  r.options.parallaxDirection);
+            	prev_position = position;
+            }
             return r.$rel.css('background-position', position);
           };
         }
@@ -382,13 +391,13 @@
     }
   };
   $.fn.responsiveSlider.defaults = {
-    autoplay: false,
+    autoplay: true,
     interval: 5000,
     touch: true,
     parallax: false,
     parallaxDistance: 1 / 10,
     parallaxDirection: 1,
-    transitionTime: 300,
+    transitionTime:1000,
     moveDistanceToSlideChange: 4,
     onSlideChange: function() {},
     onSlideNext: function() {},
