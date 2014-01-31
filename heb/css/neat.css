@@ -142,6 +142,10 @@ body {
   padding: 0;
   margin-bottom: 0;
 }
+.quest-location-markers {
+	font-size:0.4em !important; 
+	font-family: AlefRegular !important; 
+}
 .responsive-slider-parallax .slides-container ul li .slide-body .caption .sub span {
   background: #ffffff;
   padding: 0 5px;
