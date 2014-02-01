@@ -17,6 +17,9 @@ app.get('/', function (req, res) {
 app.get('/what-is-it' , function(req,res) {
 	res.render('heb/what_is_it');
 });
+app.get('/quests' ,function(req,res) {
+	res.render('heb/quests.jade');
+});
 
 app.listen(3000);
 console.log('Listening on port 3000');

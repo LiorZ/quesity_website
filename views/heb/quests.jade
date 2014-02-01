@@ -1,0 +1,113 @@
+extends layout
+block content
+        script(src='https://maps.googleapis.com/maps/api/js?sensor=false')
+        .background-clouds.breadcrumbs-container
+            .container
+                ol.breadcrumb
+                  li
+                    a(href='index.html') עמוד הבית
+                  li.active הטיולים
+            section
+              .container
+                .row
+                  .col-md-9
+                    .content
+                      h1 הטיולים ב Quesity
+                      a(name='tlv_adventures')
+                        h2(style='padding-top: 2em;') הרפתקאות בעיר העברית
+                      #img_container(style='float: left;')
+                        img(src='img/tlv_quest_framed.png')
+                      p.lead
+                         הסיור המרתק והמשעשע 'הרפתקאות בעיר העברית' מתרחש בתל אביב של שנות העשרים. זוהי עיר ששפת היום-יום שלה, התרבות שלה והאופי שלה שונים לחלוטין ממה שאנו מכירים כיום. זוהי עיר שאם נקלע אליה במקרה, ספק אם נדע כיצד להסתדר בה... אבל אתם מוזמנים לנסות!
+                      
+                      p.lead
+                        b זמן ממוצע: 
+                        שעתיים  
+                        b מרחק הליכה ממוצע: 
+                        | 5 ק"מ
+                      p.lead
+                        b מיקום התחלת הטיול: 
+                        רוטשילד פינת נחמני
+                      div#map_canvas_tlv.quesity_map_canvas
+
+
+                      a(name='matan_asfan')
+                        h2(style='padding-top: 2em;') מתן האספן ותעלומת האקדח
+                      #img_container(style='float: left;')
+                        img(src='img/matan_framed.png')
+                      p.lead
+                        מתן הוא אספן של חפצים עתיקים וסיפורים נושנים. בטיול זה, פרי עטה של גלילה רון פדר, נתלווה אל מתן האספן בחיפושו אחר האקדח האבוד של זאב ז'בוטינסקי. ננסה להבין מה רשום בצופן שעל הפתק, ניזהר מסוחרי עתיקות מפוקפקים וכמו בלשים טובים, נצעד צעד צעד במסלול שבו הלך פעם ז'בוטינסקי.
+                      p.lead
+                                b זמן ממוצע: 
+                                שעה  
+                                b מרחק הליכה ממוצע: 
+                                | 1.5 ק"מ
+                      p.lead
+                        b מיקום התחלת הטיול:             
+                        רחוב יפו - כיכר ספרא
+                        br
+                        ליד תחנת "העירייה" של הרכבת הקלה         
+                      div#map_canvas_matan.quesity_map_canvas
+                                       
+                      a(name='mini-israel')
+                        h2(style='padding-top: 2em;')  מיני ישראל - המסע של צביקה
+                      #img_container(style='float: left;')
+                        img(src='img/mini-israel-framed.png')
+                      p.lead
+                        בסיור המיועד לילדים שבפארק מיני ישראל נעזור לצביקה נחליאלי לחפש את אחיו ברחבי הארץ. בדרך נפגוש דמויות משעשעות, נתמודד עם חידות ואתגרים ואף נזכה להכיר מעט את ההיסטוריה שלנו. למה המנופאי החיפאי לא מסוגל להשלים אף משפט? כיצד מדברים בשפת ה - פ'? ומי ביקר בסוויטה הנשיאותית במלון המלך דוד?
+
+                      p.lead
+                                b זמן ממוצע: 
+                                שעה  
+                                b מרחק הליכה ממוצע: 
+                                | 1 ק"מ
+                      p.lead
+                        b מיקום התחלת הטיול: 
+                        שער הכניסה - פארק מיני ישראל                      
+                      div#map_canvas_mini-israel.quesity_map_canvas
+                                                          
+                  .col-md-3
+                    .list-group.bright.background-clouds.color-text
+                      .list-group-item
+                        h3 הטיולים
+                      a.list-group-item(href='#tlv_adventures')
+                        | הרפתקאות בעיר העברית
+                      a.list-group-item(href='#matan_asfan') מתן האספן ותעלומת האקדח
+                      a.list-group-item(href='#mini-israel') מיני ישראל - המסע של צביקה
+        script.
+                function init_one(options) {
+                        var map_canvas = document.getElementById(options.canvas);
+                        var start = new google.maps.LatLng(options.lat, options.lng);
+                        var map_options = {
+                          center: start,
+                          zoom: 17,
+                          mapTypeId: google.maps.MapTypeId.ROADMAP
+                        }
+                        var map = new google.maps.Map(map_canvas, map_options)
+                        var marker = new google.maps.Marker({
+                              position: start,
+                              map: map,
+                        });
+
+                }
+
+                function init_all() {
+                        init_one({
+                                canvas:"map_canvas_tlv",
+                                lat:32.065363,
+                                lng:34.776803
+                        });
+                        init_one({
+                                canvas:"map_canvas_matan",
+                                lat:31.780092,
+                                lng:35.223187
+                        });
+                        init_one({
+                                canvas:"map_canvas_mini-israel",
+                                lat:31.842679,
+                                lng:34.968522
+                        });
+                }
+
+
+                google.maps.event.addDomListener(window, 'load', init_all);

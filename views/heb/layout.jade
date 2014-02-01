@@ -15,7 +15,7 @@ html(dir='rtl')
     
 		nav#mainMenu.navbar.navbar-default.navbar-fixed-top(role='navigation')
 			.container
-				a.navbar-brand(href='index.html', style='float: right;')
+				a.navbar-brand(href='/', style='float: right;')
 					img(src='img/logo.png', alt='logo')
 
 
@@ -33,12 +33,12 @@ html(dir='rtl')
 							a(href='aboutus.html') צור קשר
 						li.dropdown
 							a.dropdown-toggle(href='#', data-toggle='dropdown') בלוג
-						li.dropdown
-							a.dropdown-toggle(href='#', data-toggle='dropdown') הטיולים 
-						li.dropdown
-							a.dropdown-toggle(href='#', data-toggle='dropdown') מה זה בכלל?
 						li
-							a(href='contact.html') עמוד הבית
+							a(href='/quests') הטיולים 
+						li
+							a(href='/what-is-it') מה זה בכלל?
+						li
+							a(href='/') עמוד הבית
 
 
 		block content
@@ -71,11 +71,11 @@ html(dir='rtl')
 						h3 תפריט
 						ul.nav-footer
 							li.active
-								a(href='#') דף הבית
+								a(href='/') דף הבית
 							li
-								a(href='#') מה זה בכלל?
+								a(href='/what-is-it') מה זה בכלל?
 							li
-								a(href='#') הטיולים
+								a(href='/quests') הטיולים
 							li
 								a(href='#') בלוג
 							li

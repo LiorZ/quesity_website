@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    .responsive-slider-parallax(data-spy='responsive-slider', data-parallax='true', data-parallax-direction='1', data-transitiontime='1000', data-autoplay='true')
+    .responsive-slider-parallax(data-spy='responsive-slider', data-parallax='true', data-parallax-direction='-1', data-transitiontime='1000', data-autoplay='true')
       .slides-container(data-group='slides')
         ul
           li
@@ -45,13 +45,17 @@ block content
             .info-row
               .content.info(style='vertical-align: top;')
                 h1.info-head גם טיול וגם סיפור?
-                p
-                  | כן!  Quesity היא אפליקציה לטלפון הנייד שהופכת כל טיול בעיר הגדולה להרפתקאה עם סיפור מרתק. חזרו בזמן לשנות ה20 ופגשו את מייסדי תל אביב, או לכו בעקבות מתן האספן בפתרון תעלומת האקדח בירושלים.
+                p(style='font-size:1.5em')
+                  | וגם משחק!  Quesity היא אפליקציה לטלפון הנייד שהופכת כל טיול בעיר הגדולה להרפתקאה עם סיפור מרתק. חזרו בזמן לשנות ה20 ופגשו את מייסדי תל אביב, או לכו בעקבות מתן האספן בפתרון תעלומת האקדח בירושלים.
                   | אז למה אתם מחכים? הורידו את Quesity וצאו לטייל!
+                div(style='margin-top:2em; text-align:left; padding-left:2em;')
+                        a(href="https://play.google.com/store/apps/details?id=com.quesity.app")
+                                img(src='img/play_icon.png' style="display:inline")
               .content.link
                 .video-container(style='box-shadow: 10px 10px 5px #888888;')
-                  iframe(width='560', height='315', src='//www.youtube.com/embed/rK9MRNFanv0', frameborder='0', allowfullscreen='allowfullscreen')
+                  iframe(width='560', height='315', src='//www.youtube.com/embed/VvDoZ-DDE04', frameborder='0', allowfullscreen='allowfullscreen')
 
+                
     section
       .container
         h1
@@ -84,7 +88,7 @@ block content
                 .caption.bordered.background-clouds
                   h3 מתן האספן ותעלומת האקדח
                   p.description
-                    | מתן הוא אספן של חפצים עתיקים וסיפורים נושנים. בטיול זה, פרי עטה של
+                    | מתן הוא אספן של חפצים עתיקים וסיפורים נושנים. בטיול זה, פרי עטה של 
                     b גלילה רון פדר
                     | , נתלווה אל מתן האספן בחיפושו אחר האקדח האבוד של זאב ז'בוטינסקי. ננסה להבין מה רשום בצופן שעל הפתק, ניזהר מסוחרי עתיקות מפוקפקים וכמו בלשים טובים, נצעד צעד צעד במסלול שבו הלך פעם ז'בוטינסקי.
                   p.buttons

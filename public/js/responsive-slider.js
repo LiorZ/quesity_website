@@ -394,7 +394,7 @@
     autoplay: true,
     interval: 5000,
     touch: true,
-    parallax: false,
+    parallax: true,
     parallaxDistance: 1 / 10,
     parallaxDirection: 1,
     transitionTime:1000,
