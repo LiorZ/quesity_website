@@ -1,0 +1,173 @@
+extends layout
+
+block content
+    .responsive-slider-parallax(data-spy='responsive-slider', data-parallax='true', data-parallax-direction='1', data-transitiontime='1000', data-autoplay='true')
+      .slides-container(data-group='slides')
+        ul
+          li
+            .slide-body(data-group='slide')
+              .container
+                .wrapper
+                  .caption.header(data-animate='slideAppearRightToLeft', data-delay='0', data-length='300')
+                    h2 Neat theme
+                    p.sub.text-left(data-animate='slideAppearLeftToRight', data-delay='300', data-length='300')
+                      span Clean and modern design
+                    p.sub.text-left(data-animate='slideAppearLeftToRight', data-delay='500', data-length='300')
+                      span Lightweight
+                    p.sub.text-left(data-animate='slideAppearLeftToRight', data-delay='700', data-length='300')
+                      span Standards compliant
+          li
+            .slide-body(data-group='slide')
+              .container
+                .wrapper
+                  .caption.header.text-center(data-animate='slideAppearUpToDown', data-delay='0', data-length='300')
+                    h2 Twitter Boostrap
+                    p.sub(data-animate='slideAppearDownToUp', data-delay='300', data-length='300')
+                      span Compatible with version 3
+                    p.sub(data-animate='slideAppearDownToUp', data-delay='500', data-length='300')
+                      span Perfectly compatible with grid system
+                    p.sub(data-animate='slideAppearDownToUp', data-delay='700', data-length='300')
+                      span Bootstrap compatible Slider and Calendar plugins
+          li
+            .slide-body(data-group='slide')
+              .container
+                .wrapper
+                  .caption.header.text-right(data-animate='slideAppearDownToUp', data-delay='0', data-length='300')
+                    h2 Html color classes
+                    p.sub(data-animate='slideAppearUpToDown', data-delay='300', data-length='300')
+                      span "Flat UI" colors palette
+                    p.sub(data-animate='slideAppearUpToDown', data-delay='500', data-length='300')
+                      span Made to modify any layout element
+    section.background-clouds
+      .container
+        .row
+          .col-md-12
+            .info-row
+              .content.info(style='vertical-align: top;')
+                h1.info-head גם טיול וגם סיפור?
+                p
+                  | כן!  Quesity היא אפליקציה לטלפון הנייד שהופכת כל טיול בעיר הגדולה להרפתקאה עם סיפור מרתק. חזרו בזמן לשנות ה20 ופגשו את מייסדי תל אביב, או לכו בעקבות מתן האספן בפתרון תעלומת האקדח בירושלים.
+                  | אז למה אתם מחכים? הורידו את Quesity וצאו לטייל!
+              .content.link
+                .video-container(style='box-shadow: 10px 10px 5px #888888;')
+                  iframe(width='560', height='315', src='//www.youtube.com/embed/rK9MRNFanv0', frameborder='0', allowfullscreen='allowfullscreen')
+
+    section
+      .container
+        h1
+          | הטיולים החדשים ב
+          img.quesity-logo-inline(src='img/logo.png', alt='logo')
+        .row
+          .col-sm-4.col-md-4
+            .info-thumbnail-link
+              .thumbnail.info-thumbnail.with-icon.background-clouds.color-text
+                img(src='img/mini-israel.jpg', alt='...')
+                .icon
+                  span.fa-stack
+                    i.fa.fa-circle.fa-stack-2x.color-alizarin
+                    span.fa.quest-location-markers.fa-stack-1x.color-white לטרון
+                .caption.bordered.background-clouds
+                  h3 מיני ישראל - המסע של צביקה
+                  p.description
+                    | בסיור המיועד לילדים שבפארק מיני ישראל נעזור לצביקה נחליאלי לחפש את אחיו ברחבי הארץ. בדרך נפגוש דמויות  משעשעות, נתמודד עם חידות ואתגרים ואף נזכה להכיר מעט את ההיסטוריה שלנו.
+                    | למה המנופאי החיפאי לא מסוגל להשלים אף משפט? כיצד מדברים בשפת ה - פ'? ומי ביקר בסוויטה הנשיאותית במלון המלך דוד?
+                  p.buttons
+                    a.btn.btn-lead(href='#') קרא עוד
+          .col-sm-4.col-md-4
+            .info-thumbnail-link
+              .thumbnail.info-thumbnail.with-icon.background-clouds.color-text
+                img(src='img/matan.jpg', alt='...')
+                .icon
+                  span.fa-stack
+                    i.fa.fa-circle.fa-stack-2x.color-alizarin
+                    span.fa.fa-stack-1x.color-white.quest-location-markers ירושלים
+                .caption.bordered.background-clouds
+                  h3 מתן האספן ותעלומת האקדח
+                  p.description
+                    | מתן הוא אספן של חפצים עתיקים וסיפורים נושנים. בטיול זה, פרי עטה של
+                    b גלילה רון פדר
+                    | , נתלווה אל מתן האספן בחיפושו אחר האקדח האבוד של זאב ז'בוטינסקי. ננסה להבין מה רשום בצופן שעל הפתק, ניזהר מסוחרי עתיקות מפוקפקים וכמו בלשים טובים, נצעד צעד צעד במסלול שבו הלך פעם ז'בוטינסקי.
+                  p.buttons
+                    a.btn.btn-lead(href='#') קרא עוד
+          .col-sm-4.col-md-4
+            .info-thumbnail-link
+              .thumbnail.info-thumbnail.with-icon.background-clouds.color-text
+                img(src='img/tel_aviv_adv.jpg', alt='...')
+                .icon
+                  span.fa-stack
+                    i.fa.fa-circle.fa-stack-2x.color-alizarin
+                    span.fa.fa-stack-1x.color-white.quest-location-markers תל-אביב
+                .caption.bordered.background-clouds
+                  h3 הרפתקאות בעיר העברית
+                  p.description
+                    | הסיור המרתק והמשעשע 'הרפתקאות בעיר העברית' מתרחש בתל אביב של שנות העשרים. זוהי עיר ששפת היום-יום שלה, התרבות שלה והאופי שלה שונים לחלוטין ממה שאנו מכירים כיום. זוהי עיר שאם נקלע אליה  במקרה, ספק אם נדע כיצד להסתדר בה... אבל אתם מוזמנים לנסות!
+                  p.buttons
+                    a.btn.btn-lead(href='#') קרא עוד
+        .row
+          .col-sm-4.col-md-4
+            .info-thumbnail-link
+              .thumbnail.info-thumbnail.with-icon.background-clouds.color-text
+                img(src='img/radio_broadcast.png', alt='...')
+                .icon
+                  span.fa-stack
+                    i.fa.fa-circle.fa-stack-2x.color-alizarin
+                    span.fa.fa-stack-1x.color-white.quest-location-markers תל אביב
+                .caption.bordered.background-clouds
+                  h3 כיכר השאון
+                  p.description
+                    | תחנת הרדיו המטורללת 99.99FM מזמינה את מאזיניה למשחק רדיופוני בלתי נשכח. בואו והצטרפו לשידור החי מאולפני התחנה אשר מעל כיכר רבין.
+                    br
+                    | אנחנו יודעים איך הטיול הזה מתחיל... אבל לגמרי לא ברור איך הוא עשוי להגמר.
+                  p.buttons
+                    a.btn.btn-lead(href='#') קרא עוד
+          .col-sm-4.col-md-4
+            .info-thumbnail-link
+              .thumbnail.info-thumbnail.with-icon.background-clouds.color-text
+                img(src='img/higayon.png', alt='...')
+                .icon
+                  span.fa-stack
+                    i.fa.fa-circle.fa-stack-2x.color-alizarin
+                    span.fa.fa-stack-1x.color-white.quest-location-markers תל אביב
+                .caption.bordered.background-clouds
+                  h3 הגיון בריא
+                  p.description
+                    | הגיון בריא הוא טיול מאתגר המיועד לחובבי ואוהבי תשבצי ההגיון. הטיול כולו מורכב מחידות הגיון אשר מובילות אותנו בין האתרים השונים.
+                    br
+                    | אוהבי אתגרים? חידות הגיון זורמות בדמכם? הצטרפו אלינו לטיול אשר הפתעה בסופו.
+                  p.buttons
+                    a.btn.btn-lead(href='#') קרא עוד
+          .col-sm-4.col-md-4
+            .info-thumbnail-link
+              .thumbnail.info-thumbnail.with-icon.background-clouds.color-text
+                img(src='img/megila.png', alt='...')
+                .icon
+                  span.fa-stack
+                    i.fa.fa-circle.fa-stack-2x.color-alizarin
+                    span.fa.quest-location-markers.fa-stack-1x.color-white תל אביב
+                .caption.bordered.background-clouds
+                  h3 מתן האספן ומגילת העצמאות
+                  p.description
+                    | עוד סיפור נפלא של מתן האספן, והפעם בעקבות מגילת העצמאות. הצטרפו למתן במאמציו לאמת שמועה עתיקה הקשורה למגילת העצמאות של מדינת ישראל ואל תשכחו להזהר מסוחרי העתיקות המפוקפקים!
+                    br
+                    | מתן האספן - בקרוב בלב תל אביב.
+                  p.buttons
+                    a.btn.btn-lead(href='#') קרא עוד
+
+
+    section.image-bg.color-white(style='background-image: url(img/image-bg.jpg);')
+      .container
+        .reduce-top-margin
+          h1.no-border בקרו אותנו גם ברשתות החברתיות
+          .row
+            .col-xs-6.col-sm-4.col-md-3
+              a(href='http://www.facebook.com/')
+                span.fa.fa-facebook(style='font-size: 6em;')
+            .col-xs-6.col-sm-4.col-md-3
+              a(href='http://www.twitter.com/')
+                span.fa.fa-twitter(style='font-size: 6em;')
+            .col-xs-6.col-sm-4.col-md-3
+              a(href='http://www.youtube.com/')
+                span.fa.fa-youtube(style='font-size: 6em;')
+            .col-xs-6.col-sm-4.col-md-3
+              a(href='http://plus.google.com/')
+                span.fa.fa-google-plus(style='font-size: 6em;')

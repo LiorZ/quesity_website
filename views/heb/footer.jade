@@ -1,0 +1,62 @@
+footer.background-dark-gray.color-white
+    .container
+        .row
+          .col-md-5
+            h3 צור קשר
+            form.form-horizontal(role='form')
+              .form-group
+                .col-lg-9
+                  input#inputName1.form-control.input-lg(type='text', placeholder='שם')
+                label.col-lg-3.control-label(for='inputName1') שם
+              .form-group
+                .col-lg-9
+                  input#inputEmail1.form-control.input-lg(type='email', placeholder='אימייל')
+                label.col-lg-3.control-label(for='inputEmail1') כתובת אימייל
+              .form-group
+                .col-lg-9
+                  textarea#inputContent1.form-control(rows='3')
+                label.col-lg-3.control-label(for='inputContent1') תוכן ההודעה
+              .form-group(style='text-align: left;')
+                .col-rg-offset-3.col-lg-9
+                  button.btn.btn-lead.btn-lg(type='submit') שלח
+          .col-md-4
+            h3 כללי שימוש
+            p.testimonial
+              | זה הוא מסמך כללי השימוש באפליקציית גוגי סיטי.
+          .col-md-3
+            h3 תפריט
+            ul.nav-footer
+              li.active
+                a(href='#') דף הבית
+              li
+                a(href='#') מה זה בכלל?
+              li
+                a(href='#') הטיולים
+              li
+                a(href='#') בלוג
+              li
+                a(href='#') צור קשור
+        .row
+          .col-md-12
+            hr
+            .row
+              .col-md-12
+                | כל הזכויות שמורות לתומר וליאור צימרמן ,
+                sup ©
+                | Quesity
+              .col-md-6
+                //
+                   Place for terms of use, etc !
+    //
+       jQuery (necessary for Bootstrap's JavaScript plugins) 
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    //
+       Include all compiled plugins (below), or include individual files as needed 
+    script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js')
+    //
+       Include slider 
+    script(src='js/jquery.event.move.js')
+    script(src='js/responsive-slider.js')
+    script(src='js/responsive-calendar.js')
+    script(src='js/adjustments.js')
+
