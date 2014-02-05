@@ -988,6 +988,9 @@ h3 {
   -ms-transform: scale(1, 1);
   transform: scale(1, 1);
 }
+.authors-img {
+	width:70%;
+}
 .gallery-thumbnail {
   padding: 0;
   border: 0;
