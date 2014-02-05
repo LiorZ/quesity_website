@@ -3,6 +3,8 @@ var http = require("http");
 var engine = require('jade');
 var app = express();
 
+var port = process.env.PORT || 3000;
+
 app.use(express.static(__dirname + '/public'));
 app.use(express.bodyParser());
 app.use(require('express-blocks'));
@@ -28,5 +30,5 @@ app.get('/about',function(req,res) {
 app.get('*',function(req,res) {
 	res.redirect('/');
 })
-app.listen(3000);
+app.listen(port);
 console.log('Listening on port 3000');
