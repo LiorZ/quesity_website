@@ -22,6 +22,11 @@ body {
 	font-family: AlefRegular;
 }
 
+.authors-social-links {
+    font-size:2em;
+    margin-left:0.5em;
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
