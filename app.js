@@ -24,5 +24,9 @@ app.get('/quests' ,function(req,res) {
 app.get('/about',function(req,res) {
 	res.render('heb/about.jade');
 });
+
+app.get('*',function(req,res) {
+	res.redirect('/');
+})
 app.listen(3000);
 console.log('Listening on port 3000');
