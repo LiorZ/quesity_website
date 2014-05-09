@@ -1,0 +1,101 @@
+extends layout
+block content
+  .background-clouds.breadcrumbs-container
+    .container
+        ol.breadcrumb
+          li
+            a(href='index.html') Home
+          li.active What is it?
+    section
+      .container
+        .row
+          .col-md-9
+            .content
+              h1 What is it?
+              p
+                img(src='img/what_is_it_cover.jpg', alt='...')
+              a(name='intro')
+                h2(style='padding-top: 2em;') Introduction
+              div.quest-phone-container
+                img(src='img/location_screen.jpg')
+              p.lead
+               | Quesity is a mobile application that allows you to take part in a wide variety of tours in major cities and tourist attractions, but how does it work exactly? It’s very simple: once you’ve picked a specific tour, or Quest, that you would like to take part in, you are asked to arrive at the place marker shown on the map that corresponds to you Quest. Only from this starting point will you be able to start the game.
+              p.lead
+               | Each Quest is its own world of magic! Every Quest has its own unique story and takes place in a different area. For example, in the Quest ‘Adventures in the Hebrew City’ you begin a strange adventure from the 1920s located in the area of Sderot Rothschild in the heart of Tel Aviv. In the course of the tour a fun plot in which you, the players get to take part, slowly becomes apparent.
+              br
+              a(name='how')
+                h2(style='padding-top: 2em;') How is a Quest Built?
+              p.lead
+                | A Quest is made up of pages displayed in our mobile phone app. These pages contain images, sounds, text, animation or in other words, everything needed to tell the story. Sometimes turning to the next page is as simple as pushing a button on your smartphone, but usually it’s more complicated than that.
+              p.lead
+                | For some tasks, you will be expected to solve riddles that require you to type in a text answer. For example, the solution to one riddle might be a secret address. The answer is somewhere nearby, and it’s up to you to find it.
+              p.lead
+                | There are certain situations in which there are a few separate options to continue the story. You may promptly choose how it is you wish to carry on and follow the instructions.
+              p.lead
+                | Of course sometimes you will be required to arrive at a certain place and you will be allowed to continue only upon your arrival.
+              p.lead
+                | And what if you think you’re stuck? What if the task before you seems too hard to complete?
+              p.lead
+                | That’s exactly why hints are also a part of the game. Caution! Use your hints sparingly as you are only allowed a certain number for each Quest.
+              p.lead
+                | It’s also important to be aware that in the main menu players have the choice of finding where they are currently located on a map. This will help you navigate from place to place. There are also useful links to Google and Wikipedia that can often lend a helpful hand on a Quest. A few more important things to remember are shown below in ‘Frequently Asked Questions’.
+              a(name='tips')
+                h2(style='padding-top: 2em;') Useful Tips
+              ul.lead.quest-tips
+                li
+                  b 1. How long do Quests usually take?
+                  | A Quest is a walking tour within the city limits. Before you leave to start a Quest, check the application for an estimate of how long your chosen Quest might take. Realistic expectations are always important…
+                  img(src="img/old_lady.jpg" style="float:left;")
+                li
+                  b Cell-phone Battery 
+                  | It will be worth your while to make sure that your phone is fully charged before setting out on a Quest. Quesity’s research division has concluded that an average Quest will use 22% of your cell-phone battery.
+                li
+                  b Behavior is #1
+                  | Behavior is always important when traveling so please no pushing old people out of the way, no crossing crosswalks on a red light and help keep the world clean by always, always throwing your waste in the trash.
+                li
+                  b Pleasure: 
+                  | Have fun!
+              
+              a(name='faq')
+                h2(style='padding-top: 2em;') Frequently Asked Questions
+              ol.faq.lead
+                li
+                  b How many hints do I get in the course of a single Quest?
+                  div
+                    | The amount changes from Quest to Quest, but remember that hints are always limited.
+                li
+                  b
+                    | Sometimes the application tells me that I have to get to a specific place on the map. How close to I have be? How accurate is the GPS?
+                  div
+                    | The GPS used by Quesity is accurate to a matter of only a few meters. “Behind the scenes” of every location related task is a specific radius in which you are expected to arrive of your spot. The size of this radius changes from task to task, but will never be smaller than 10 meters in diameter.
+                li
+                  b What if I quit the Quest in the middle to go enjoy a tasty Baguette?
+                  div
+                    | Excellent! Bon Appetite. You can always return to the same point in the Quest when you stopped.
+                li
+                  b Are there scores?
+                  div
+                    | What’s a game without keeping score? The app keeps track of your points in the in the near future you will be able to enter your personal profile to see how many points and achievements you’ve acquired.
+                li
+                  b What’s in ‘My Quests’?
+                  div
+                    | In ‘My Quests’ you’ll find all of the Quests of personal interest that you’ve highlighted and all of the Quests that you’ve already completed.
+                li
+                  b What if I feel inspired and want to create my own Quest?
+                  div
+                    | First of all, you’re awesome! Soon the application that allows the public to create a Quest will be released and everyone can get imaginative creating Quests. You’ll be about to build Quests just for yourselves and chosen friends or you can choose to release it to the world. While the building of a Quest is relatively easy, the process of creating an interesting storyline and path to follow requires a high level of creativity. 
+                li
+                  b
+                    | I have an excellent idea for Quesity! The app should check a player’s heart-rate when using clues at different times throughout the course of a Quest!
+                  div
+                    | That’s an excellent idea! Thanks a lot! We always love hearing from players with ideas or even criticism when needed. Feel free to contact us at the email listed in the bottom banner of the page.
+          .col-md-3
+            .list-group.bright.background-clouds.color-text(style="position:fixed; width:12%;")
+              .list-group-item
+                h3 Menu
+              a.list-group-item(href='#intro')
+                | Introduction
+              a.list-group-item(href='#how') How is a Quest Built?
+              a.list-group-item(href='#tips') Useful Tips
+              a.list-group-item(href='#faq') Frequently Asked Questions
+

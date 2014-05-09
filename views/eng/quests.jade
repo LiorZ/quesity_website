@@ -1,0 +1,131 @@
+extends layout
+block content
+        script(src='https://maps.googleapis.com/maps/api/js?sensor=false')
+        .background-clouds.breadcrumbs-container
+            .container
+                ol.breadcrumb
+                  li
+                    a(href='index.html') Home
+                  li.active The Quests
+            section
+              .container
+                .row
+                  .col-md-9
+                    .content
+                      h1 Our Quests
+                      a(name='tlv_adventures')
+                        h2(style='padding-top: 2em;') Adventures In The First Hebrew City
+                      div.quest-phone-container
+                        img(src='img/tlv_quest_framed.jpg')
+                      p.lead
+                        b Written by: 
+                        | Tomer Zimmerman
+                        br
+                        b Illustration: 
+                        | Nir Shahrur
+                      p.lead
+                         | The exciting and entertaining tour ‘Adventures in the Hebrew City’ takes place in Tel Aviv in the 1920s. You’ll find a city with her own language, her own culture, and her own personality which are all a far cry from what can be observed in Tel Aviv today. If you find yourself caught in the web of this city we’re doubtful that you’ll know how to get by as its residents once did… but you’re invited to give it a try!
+                      
+                      p.lead
+                        b Average time: 
+                        | 2 Hours  
+                        b Average walking distance: 
+                        | 4 Km
+                      p.lead
+                        b Starting location:  
+                        | Corner of Rothschild and Nachmani, Tel Aviv
+                      div#map_canvas_tlv.quesity_map_canvas
+
+
+                      a(name='matan_asfan')
+                        h2(style='padding-top: 2em;') The Mystery of the Ancient Pistol
+                      div.quest-phone-container
+                        img(src='img/matan_framed.jpg')
+                      p.lead
+                        b Written by: 
+                        | Galilah Ron-Feder Amit
+                        br
+                        b Illustration: 
+                        | Michelle Molad-Or
+                      p.lead
+                        | Matan is a collector of ancient items and old stories. On this tour written by Glilah Ron Feder 
+                        | we join Matan in his search for the lost pistol of Ze’ev Jabotinsky, one of the first zionists. Take the tour yourself and try to decipher codes to find his personal, ancient pistol. Beware of shady antique dealers and like good detectives, follow the paths step by step that Jabotinsky once took.
+                      p.lead
+                        b Average time: 
+                        | 1 Hour 
+                        b Average walking distance:  
+                        | 1.5 Km
+                      p.lead
+                        b Starting location:              
+                        | Safra Square on Jaffa st. Jerusalem. 
+                        br
+                        | Located next to the City Hall of the light rail.         
+                      div#map_canvas_matan.quesity_map_canvas
+                                       
+                      a(name='mini-israel')
+                        h2(style='padding-top: 2em;')  Tsvika’s Journey
+                      div.quest-phone-container
+                        img(src='img/mini-israel-framed.jpg')
+                      p.lead
+                        b Written by: 
+                        | Tomer Zimmerman
+                        br
+                        b Illustration:  
+                        | Nir Shahrur
+                      p.lead
+                        | On this tour of Mini Israel made special for kids, the whole family can join Tsvika Nachlieli in this (mini) nation-wide search for is brother. Along the way you’ll meet comical characters and get to solve all kinds of puzzles and challenges while getting familiar with a large amount of Israeli history. Why can’t a crane operator in Haifa finish a single sentence? How do you speak the language of ‘P’?  And who’s visited the presidential suite at the King David Hotel?
+                      p.lead
+                                b Average Time:  
+                                | 1 Hour  
+                                b Average walking distance:  
+                                | 1 Km
+                      p.lead
+                        b Starting location: 
+                        | Mini Israel park, Latrun.                      
+                      div#map_canvas_mini-israel.quesity_map_canvas
+                                                          
+                  .col-md-3
+                    .list-group.bright.background-clouds.color-text(style="position:fixed; width:12%;")
+                      .list-group-item
+                        h3 The Quests
+                      a.list-group-item(href='#tlv_adventures')
+                        | Adventures On The First Hebrew City
+                      a.list-group-item(href='#matan_asfan') The Mystery Of The Pistol
+                      a.list-group-item(href='#mini-israel') Tsvika’s Journey
+        script.
+                function init_one(options) {
+                        var map_canvas = document.getElementById(options.canvas);
+                        var start = new google.maps.LatLng(options.lat, options.lng);
+                        var map_options = {
+                          center: start,
+                          zoom: 17,
+                          mapTypeId: google.maps.MapTypeId.ROADMAP
+                        }
+                        var map = new google.maps.Map(map_canvas, map_options)
+                        var marker = new google.maps.Marker({
+                              position: start,
+                              map: map,
+                        });
+
+                }
+
+                function init_all() {
+                        init_one({
+                                canvas:"map_canvas_tlv",
+                                lat:32.065910,
+                                lng:34.777403
+                        });
+                        init_one({
+                                canvas:"map_canvas_matan",
+                                lat:31.780092,
+                                lng:35.223187
+                        });
+                        init_one({
+                                canvas:"map_canvas_mini-israel",
+                                lat:31.842679,
+                                lng:34.968522
+                        });
+                }
+
+
+                google.maps.event.addDomListener(window, 'load', init_all);

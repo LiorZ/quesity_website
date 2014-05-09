@@ -1,7 +1,7 @@
 doctype html
 html(dir='#{lang_params.dir}')
 	head
-		title Quesity - טיול שהוא משחק
+		title Quesity - Tour a city by playing a quest
 		meta(charset='UTF-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 
@@ -13,7 +13,7 @@ html(dir='#{lang_params.dir}')
     
 		nav#mainMenu.navbar.navbar-default.navbar-fixed-top(role='navigation')
 			.container
-				a.navbar-brand(href='/', style='float: right;')
+				a.navbar-brand(href='/', style='float: left;')
 					img(src='img/logo.png', alt='logo')
 
 
@@ -26,17 +26,17 @@ html(dir='#{lang_params.dir}')
 
 
 				.collapse.navbar-collapse.navbar-ex1-collapse
-					ul.nav.navbar-nav.navbar-right
+					ul.nav.navbar-nav.navbar-left
 						li
-							a(href='/about') מי אנחנו
+							a(href='/about') Team
 						li.dropdown
-							a.dropdown-toggle(href='#', data-toggle='dropdown') בלוג
+							a.dropdown-toggle(href='#', data-toggle='dropdown') Blog
 						li
-							a(href='/quests') הטיולים 
+							a(href='/quests') Quests
 						li
-							a(href='/what-is-it') מה זה בכלל?
+							a(href='/what-is-it') What is it?
 						li
-							a(href='/') עמוד הבית
+							a(href='/') Home
 
 
 		block content
@@ -45,30 +45,30 @@ html(dir='#{lang_params.dir}')
 			.container
 				.row
 					.col-md-5
-						h3 צור קשר
+						h3 Contact us
 						a(href="mailto:contact@quesity.com") general@quesity.com
 					.col-md-4
-						h3 כללי שימוש
-						p.testimonial בקרוב...
+						h3 Terms of use
+						p.testimonial Soon...
 					.col-md-3
-						h3 תפריט
+						h3 Menu
 						ul.nav-footer
 							li.active
-								a(href='/') דף הבית
+								a(href='/') Home
 							li
-								a(href='/what-is-it') מה זה בכלל?
+								a(href='/what-is-it') The team
 							li
-								a(href='/quests') הטיולים
+								a(href='/quests') The Quests
 							li
-								a(href='#') בלוג
+								a(href='#') Blog
 							li
-								a(href='/about') מי אנחנו
+								a(href='/about') Who are we?
 				.row
 					.col-md-12
 						hr
 				.row
 					.col-md-12
-						| כל הזכויות שמורות לQuesity
+						| All rights reserved to Quesity
 					.col-md-6
 						a(href="https://plus.google.com/107697014583531076169" rel="publisher") Google+
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')

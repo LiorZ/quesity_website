@@ -513,6 +513,12 @@ h3 {
 .pagination li a:hover .btn-link:hover {
   color: #cce5f6;
 }
+
+.quest-phone-container {
+	float:left;
+	margin-right:1em;
+}
+
 .pagination li.active a {
   background-color: #3498db;
 }
@@ -751,8 +757,13 @@ h3 {
   margin-top: 80px;
 }
 .content.info {
-	padding-left:1em;
+	padding-left:2em;
 }
+
+.content.info-right {
+	padding-right:2em;
+}
+
 .breadcrumbs-container .breadcrumb {
   border-radius: 0;
   background: transparent;
@@ -1393,7 +1404,7 @@ footer hr {
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-	.content.info {
+	.content.info, .content.info-right {
   		width:60%;
   	}
   .content.link {
@@ -1401,7 +1412,7 @@ footer hr {
   }
 }
 @media (min-width: 1200px) {
-	.content.info {
+	.content.info, .content.info-right {
   		width:60%;
   	}
   	.content.link {
