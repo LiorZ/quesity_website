@@ -1,5 +1,5 @@
 doctype html
-html(dir='#{lang_params.dir}')
+html(dir='#{lang_params.dir}' lang="en")
 	head
 		title Quesity - Tour a city by playing a quest
 		meta(charset='UTF-8')
@@ -28,15 +28,17 @@ html(dir='#{lang_params.dir}')
 				.collapse.navbar-collapse.navbar-ex1-collapse
 					ul.nav.navbar-nav.navbar-left
 						li
+							a(href='/') Home
+						li
+							a(href='/what-is-it') What is it?
+						li
+							a(href='/quests') Quests														
+						li
 							a(href='/about') Team
 						li.dropdown
 							a.dropdown-toggle(href='#', data-toggle='dropdown') Blog
 						li
-							a(href='/quests') Quests
-						li
-							a(href='/what-is-it') What is it?
-						li
-							a(href='/') Home
+							a(href='/?lang=heb') עברית
 
 
 		block content
@@ -46,23 +48,23 @@ html(dir='#{lang_params.dir}')
 				.row
 					.col-md-5
 						h3 Contact us
-						a(href="mailto:contact@quesity.com") general@quesity.com
+						a(href="mailto:contact@quesity.com" target="_blank") general@quesity.com
 					.col-md-4
 						h3 Terms of use
 						p.testimonial Soon...
 					.col-md-3
 						h3 Menu
 						ul.nav-footer
-							li.active
-								a(href='/') Home
-							li
-								a(href='/what-is-it') The team
-							li
-								a(href='/quests') The Quests
-							li
-								a(href='#') Blog
-							li
-								a(href='/about') Who are we?
+						li
+							a(href='/') Home
+						li
+							a(href='/what-is-it') What is it?
+						li
+							a(href='/quests') Quests														
+						li
+							a(href='/about') Team
+						li
+							a(href='#') Blog
 				.row
 					.col-md-12
 						hr

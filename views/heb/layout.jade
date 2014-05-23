@@ -1,5 +1,5 @@
 doctype html
-html(dir='#{lang_params.dir}')
+html(dir='#{lang_params.dir}' lang="he")
 	head
 		title Quesity - טיול שהוא משחק
 		meta(charset='UTF-8')
@@ -28,6 +28,8 @@ html(dir='#{lang_params.dir}')
 				.collapse.navbar-collapse.navbar-ex1-collapse
 					ul.nav.navbar-nav.navbar-right
 						li
+							a(href='/?lang=eng') English
+						li
 							a(href='/about') מי אנחנו
 						li.dropdown
 							a.dropdown-toggle(href='#', data-toggle='dropdown') בלוג
@@ -46,7 +48,7 @@ html(dir='#{lang_params.dir}')
 				.row
 					.col-md-5
 						h3 צור קשר
-						a(href="mailto:contact@quesity.com") general@quesity.com
+						a(href="mailto:contact@quesity.com" target="_blank") general@quesity.com
 					.col-md-4
 						h3 כללי שימוש
 						p.testimonial בקרוב...
