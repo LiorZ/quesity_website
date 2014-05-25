@@ -1,0 +1,52 @@
+extends base
+
+block content
+    section
+        .container
+            .row
+              .col-md-9
+                -page.posts.each(function(article) {
+                    .media.blog-entry
+                      .pull-left
+                        img.media-object(src='http://w3widgets.com/templates/neat/49675aa344d6178ed75174df9f76b53a2b6b57b0/img/placeholder-heli-small.jpg', alt='...')
+                      .media-body
+                        .blog-entry-content
+                          .category 
+                            +category(article.categories)
+                          h2
+                            a(href=config.root + article.path)= article.title
+                          .date 
+                            +date(article.date)
+                          .content
+                              !=article.excerpt
+                              include _partial/article_meta
+                              a(href=config.root + article.path)
+                                | Read more 
+                                span.fa.fa-long-arrow-right
+                - })
+              .col-md-3
+                h3 Archives
+                ul.side-list
+                  li
+                    a(href='#') August 2013
+                  li
+                    a(href='#') September 2013
+                  li
+                    a(href='#') October 2013
+                  li
+                    a(href='#') November 2013
+                  li
+                    a(href='#') December 2013
+                h3 Category
+                ul.side-list
+                  li
+                    a(href='#') Webdesign
+                  li
+                    a(href='#') Programming
+                  li
+                    a(href='#') Freebies
+                  li
+                    a(href='#') Others
+
+
+    include _partial/article_list_pagination
