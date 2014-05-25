@@ -43,11 +43,16 @@ var lang_detection = function(req,res,next) {
 		return;
 	}
 	var lang = req.headers["accept-language"];
-	if ( lang.match(/he/g) ) {
-		req.session.lang = "heb";
+	if ( _.isUndefined(lang) || _.isNull(lang) ) {
+		req.session.lang = "eng";
 	}else {
-		req.session.lang="eng";
+		if ( lang.match(/he/g) ) {
+			req.session.lang = "heb";
+		}else {
+			req.session.lang="eng";
+		}
 	}
+
 	next();
 };
 app.use(lang_detection);
