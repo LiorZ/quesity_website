@@ -1,5 +1,8 @@
 title: 5 great museums for children in Israel
 date: 2014-05-24 16:39:06
+categories:
+    - Googi
+    - Tel Aviv
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur libero est, vulputate nec nibh sit amet, luctus placerat diam. Aliquam sit amet est arcu.

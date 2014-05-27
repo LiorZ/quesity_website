@@ -1,20 +1,17 @@
-extends base
+extends index
 
-prepend window_title
-  
+append window_title
+  &nbsp;&#124;&nbsp; 
   = page.title
-  &mdash;
-
-append content
-  article(class=page.layout)
-    h2= page.title
-    div.meta
+block main_content
+    .blog-entry
       include _partial/article_meta
-
-      +date(page.date)
-
-      +category(page.categories)
-    
-    != page.content
-
-  include _partial/article_pagination
+      .blog-entry-content.no-border
+        .category 
+            +category(page.categories)
+        h1= page.title
+        .date
+            +date(page.date)
+        .content
+            != page.content
+    include _partial/article_pagination

@@ -13,6 +13,12 @@ html(lang='en')
           p#site-slogan= config.subtitle
           
     section#content
-      block content        
+      section
+        .container
+            .row
+              .col-md-9
+                block main_content
+              .col-md-3
+                  block side_content        
     footer#page-footer
       include _partial/footer

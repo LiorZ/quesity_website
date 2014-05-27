@@ -1,0 +1,19 @@
+-page.posts.each(function(article) {
+                    .media.blog-entry
+                      .pull-left
+                        img.media-object(src='http://w3widgets.com/templates/neat/49675aa344d6178ed75174df9f76b53a2b6b57b0/img/placeholder-heli-small.jpg', alt='...')
+                      .media-body
+                        .blog-entry-content
+                          .category 
+                            +category(article.categories)
+                          h2
+                            a(href=config.root + article.path)= article.title
+                          .date 
+                            +date(article.date)
+                          .content
+                              !=article.excerpt
+                              include article_meta.jade
+                              a(href=config.root + article.path)
+                                | Read more 
+                                span.fa.fa-long-arrow-right
+- })
