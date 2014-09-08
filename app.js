@@ -24,68 +24,22 @@ var load_lang_vars = function() {
 		lang_params[l] = readJsonFileSync('views/'+l+'/vars.json');
 	}).value();
 };
-
-app.use(express.cookieParser());
-app.use(express.session({
-    store: new MemoryStore(),
-    secret: 'Lior&Tomer',
-}));
-app.use(express.static(__dirname + '/public'));
-app.use(express.bodyParser());
-app.use(require('express-blocks'));
-
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
-load_lang_vars();
-var lang_detection = function(req,res,next) {
-	if ( req.session.lang ) {
-		next();
-		return;
-	}
-	var lang = req.headers["accept-language"];
-	if ( _.isUndefined(lang) || _.isNull(lang) ) {
-		req.session.lang = "eng";
-	}else {
-		if ( lang.match(/he/g) ) {
-			req.session.lang = "heb";
-		}else {
-			req.session.lang="eng";
-		}
-	}
-
-	next();
-};
-app.use(lang_detection);
-
-app.use(function(req,res,next) {
-	var lang = req.param('lang')
-	if ( lang && supported_langs[lang] ) {
-		req.session.lang = req.param('lang');
-		console.log("Using " +req.session.lang);
-	}
-	next();
-});
-
-app.use(function(req,res,next){
-	  console.log("USING LANG PARAMS " + JSON.stringify(lang_params[req.session.lang]));
-	  res.locals.lang_params = lang_params[req.session.lang];
-	  next();
+app.configure(function() {
+	app.use(express.cookieParser());
+	app.use(express.session({
+	    store: new MemoryStore(),
+	    secret: 'Lior&Tomer',
+	}));
+	app.set('views', __dirname + '/public');
+	app.set("view options", {layout: false});
+	app.use(express.static(__dirname + '/public'));
+	app.engine('html', require('ejs').renderFile);
+	app.use(express.bodyParser());
 });
 
 
 app.get('/', function (req, res) {
-    res.render(req.session.lang+'/index');
-});
-
-app.get('/what-is-it' , function(req,res) {
-	res.render(req.session.lang+'/what_is_it');
-});
-app.get('/quests' ,function(req,res) {
-	res.render(req.session.lang+'/quests.jade');
-});
-
-app.get('/about',function(req,res) {
-	res.render(req.session.lang+'/about.jade');
+    res.render('index-default-heb.html');
 });
 
 app.get('*',function(req,res) {
