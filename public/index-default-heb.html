@@ -6,7 +6,7 @@
 		<meta name="description" content="Quesity is a mobile app that takes the whole family on a real-life quest through museums, parks, and heritage sites">
 		<meta name="author" content="Quesity">
 		<link rel="shortcut icon" href="favicon.ico">
-		<title>Quesity - משחק משפחתי מרתק</title>
+		<title>Quesity - משחק משפחתי מרתק במוזיאונים, פארקים ואתרי תיירות</title>
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -75,8 +75,8 @@
 				  <ul class="nav navbar-nav navbar-right">
 				  	<li class="page-scroll"><a href="#contact">צרו קשר</a></li>
 					<li class="page-scroll"><a href="#featured">איפה משחקים?</a></li>				  	
-				   	<li class="page-scroll"><a href="#icon-box">מה זה קווסיטי?</a></li>
-				  	<li class="page-scroll"><a href="#slider">שער</a></li>
+				   	<li class="page-scroll"><a href="#icon-box">מה זה?</a></li>
+				  	<li class="page-scroll"><a href="#slider">ראשי</a></li>
 				  </ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
@@ -86,16 +86,20 @@
 
 				
 		<!-- Slider -->	
-		<div id="slider" class="fullSection">
+		<div id="slider" class="fullSection" style="padding-top:8em;">
 			<div class="container">
-				<img src="images/logo.png" class="carousel-inner"/>
+				<div id="logo_container" style="width:70%; margin-left:auto; margin-right:auto;">
+					<img src="images/logo.png" class="img-responsive" />
+				</div>
 				<!-- fullscreen-slider -->
 				<div id="fullscreen-slider" class="carousel slide" data-ride="carousel">
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner">
 					<div class="item active">
 						<div class="slider-caption"> 
-							<h2>משחק משפחתי מרתק באתרי תיירות ברחבי העולם</h2>								
+							<h2>משחק משפחתי מרתק
+							<br/>
+							 במוזיאונים פארקים ואתרי תיירות</h2>								
 								<div class="page-scroll">
 								<a href="#icon-box" class="btn btn-custom btn-lg analytics-btn" data-analytics="Cover Read More">קרא עוד</a>	
 								</div>
@@ -114,31 +118,33 @@
 		
 		<div id="icon-box" class="fullSection">
 			<div class="container">
-			<div class="row vertical-align">
+			<div class="row"> 
+					<div class="col-md-4 col-sm-4" style="text-align: center;">
+						<img src="images/iphone_deviceart.png"  class="img-responsive" style="margin-left:auto; margin-right:auto; height:35em;"/>
+					</div>
+					
 					<div class="col-md-8 col-sm-8">
-					<h2 style="font-size: 3em; text-align: center; ">
+					<h2 style="font-size: 4em; text-align: center; ">
 										מוכנים לאתגר משפחתי?
 					</h2>
 					
-					<h3 style="text-align: center;">
+					<h2 style="text-align: center;">
 						במהלך המשחק תדרשו לשתף פעולה - הורים וילדים, בפתרון של חידות ומשימות שיהפכו את הביקור שלכם לחוויה שתתקשו לשכוח.
 						הורידו את אפליקציית Quesity 
 						עכשיו
 						ובקרו באחד מהאתרים בהם מתקיים המשחק!
 						
-					</h3>
-					<div id="appstore_playstore" style="text-align:center; margin-top:3em;">
+					</h2>
+					<div id="appstore_playstore" style="text-align:center; margin-top:6em;">
 					<a  target="_blank" href="https://play.google.com/store/apps/details?id=com.quesity.app" >
 						<img data-analytics="Google Play Store" class="analytics-btn" src="images/playstore-logo.png" style="width:30%;">
 					</a>
 					<a target="_blank" href="https://itunes.apple.com/us/app/quesity/id889776713"  >
-						<img data-analytics="Apple AppStore" class="analytics-btn" src="images/app_store_logo.png" style="width:30%;">
+						<img data-analytics="Apple AppStore" class="analytics-btn" src="images/app_store_logo.png" style="width:30%; margin-right:3em;">
 					</a>
 					</div>
-					</div>						
-					<div class="col-md-4 col-sm-4" style="text-align: center;">
-						<img src="images/iphone_deviceart.png"/>
-					</div>
+					</div>			
+					
 			</div>
 			</div>
 		</div>
@@ -152,14 +158,15 @@
 				</div>
 				
 				<!-- featured-list -->	
-				<div id="featured-list" class="owl-carousel" style="direction: ltr;">
+				<div id="featured-list" class="owl-carousel carousel-bg-settings" style="direction: ltr;">
 			
 					<div class="featured-box item text-center">
 						<img class="img-responsive img-thumbnail" src="images/mini-israel.jpg" alt="">
 						<div class="featured-info">								
 							<h2>המסע של צביקה</h2>
 							<h3>מיני ישראל</h3>
-							<p>עזרו לצביקה בחיפושיו אחרי אחיו ברחבי (מיני) ישראל</p>
+							<p class="quest-description">עזרו לצביקה בחיפושיו אחרי אחיו ברחבי (מיני) ישראל</p>
+							<br/>
 							<a href="#" data-analytics="Read More - Mini Israel - Tzvika's Journey" class="btn btn-custom analytics-btn" data-toggle="modal" data-target="#mini_israel_tzvika">קרא עוד</a>	
 						</div>
 					</div>
@@ -168,7 +175,7 @@
 						<div class="featured-info">								
 							<h2>המרוץ הגדול</h2>
 							<h3>מיני ישראל</h3>
-							<p>צאו למרוץ משעשע ומאתגר, פתרו כמה שיותר חידות וזכו בפרסים</p>
+							<p class="quest-description">צאו למרוץ משעשע ומאתגר, פתרו כמה שיותר חידות וזכו בפרסים</p>
 							<a href="#" data-analytics="Read More - Mini Israel - Big Race" class="btn btn-custom analytics-btn" data-toggle="modal" data-target="#mini_israel_race">קרא עוד</a>
 						</div>
 					</div>
@@ -177,7 +184,7 @@
 						<div class="featured-info">								
 							<h2>רוחות מן הדרום</h2>
 							<h3>מוזאון האדם והחי, רמת גן</h3>
-							<p>רוחות השתלטו על מוצגים מהמוזאון! עזרו לצוות המוזאון למצוא אותן</p>
+							<p class="quest-description">רוחות השתלטו על מוצגים מהמוזאון! עזרו לצוות המוזאון למצוא אותן</p>
 							<a href="#" class="btn btn-custom analytics-btn" data-analytics="Read More - Ramat Gan - Ghosts from the south" data-toggle="modal" data-target="#adam_ve_hay">קרא עוד</a>
 						</div>
 					</div>
@@ -186,7 +193,7 @@
 						<div class="featured-info">								
 							<h2>תעלומה מחומר אחר</h2>
 							<h3>מוזאון כפר סבא</h3>
-							<p>משחק בלשי משפחתי המתרחש ברחבי המוזאון הארכאולוגי בכפר סבא</p>
+							<p class="quest-description">משחק בלשי משפחתי המתרחש ברחבי המוזאון הארכאולוגי בכפר סבא</p>
 							<a href="#" class="btn btn-custom analytics-btn" data-analytics="Read More - Kfar Sava - Other Material" data-toggle="modal" data-target="#kfar_sava">קרא עוד</a>	
 						</div>
 					</div>
@@ -202,18 +209,25 @@
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					  </div>
 					  <div class="modal-body">
-							<h3 class="text-center">מיני ישראל - המסע של צביקה</h3>
-							<p><img class="img-responsive img-full" src="images/mini-israel.jpg" alt=""/>
+							<h2 class="text-center modal-header">מיני ישראל - המסע של צביקה</h2>
+							<div class="row">
+							<div class="col-md-6 col-sm-6">
+							<p class="quest-description-inner">
 							בסיור המיועד לילדים שבפארק מיני ישראל נעזור לצביקה נחליאלי לחפש את אחיו ברחבי הארץ.
 							בדרך נפגוש דמויות משעשעות, נתמודד עם חידות ואתגרים ואף נזכה להכיר מעט את ההיסטוריה שלנו.
 							למה המנופאי לא מסוגל להשלים אף משפט? איך עושים קניות בשוק הכרמל בשנות ה30?
 							כיצד מדברים בשפת הפ'? ועוד.
 							<br/>
 							עזרו לצביקה למצוא את חיזקי!
-						</p>												 							 
+						</p>
+						</div>			
+						<div class="col-md-6 col-sm-6 modal-image-container">
+								<img class="img-responsive img-full" src="images/mini-israel.jpg" alt=""/>
+						</div>									 							 
 					 </div>
 					</div>
 				  </div>
+				</div>
 				</div>
 				
 				<div class="modal fade" id="mini_israel_race" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
@@ -223,13 +237,21 @@
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					  </div>
 					  <div class="modal-body">
-							<h3 class="text-center">מיני ישראל - המרוץ הגדול</h3>
-							<p><img class="img-responsive img-full" src="images/mini_israel_race.png" alt=""/>
-							מירוץ חידות ססגוני בחרוזים ברחבי מיני ישראל. נראה כמה ידע תצברו על המדינה בדרככם אל המדליה ...
-						</p>												 							 
+							<h2 class="text-center modal-header">מיני ישראל - המרוץ הגדול</h2>
+							<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<p class="quest-description-inner">
+									מירוץ חידות ססגוני בחרוזים ברחבי מיני ישראל. נראה כמה ידע תצברו על המדינה בדרככם אל המדליה ...
+								</p>	
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<img class="img-responsive img-full" src="images/mini_israel_race.png" alt=""/>
+							</div>			 							 
+							
 					 </div>
 					</div>
 				  </div>
+				</div>
 				</div>
 				
 				<div class="modal fade" id="adam_ve_hay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
@@ -238,19 +260,27 @@
 					  <div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					  </div>
-					  <div class="modal-body">
-							<h3 class="text-center">מוזאון האדם והחי - רוחות מן הדרום</h3>
-							<p><img class="img-responsive img-full" src="images/adam_ve_hay_cover.png" alt=""/>
+					 <div class="modal-body">
+							<h3 class="text-center modal-header">מוזאון האדם והחי - רוחות מן הדרום</h3>
+							<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<p class="quest-description-inner">
 							רוחות מן הדרום הוא משחק בלשי המתרחש ברחבי מוזאון האדם והחי והגן הסמוך.
 							מי הן הרוחות מן הדרום? 
 							מה המשותף לשלושת הפריטים הרדופים?
 							ואיך לשתף פעולה כמשפחה?
 							<br/>
-							בואו לנסות...
-						</p>												 							 
+							בואו לנסות...								</p>	
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<img class="img-responsive img-full" src="images/adam_ve_hay_cover.png" alt=""/>
+							</div>			 							 
+							
 					 </div>
+					 
 					</div>
 				  </div>
+				</div>
 				</div>
 				
 				<div class="modal fade" id="kfar_sava" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
@@ -260,15 +290,23 @@
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					  </div>
 					  <div class="modal-body">
-							<h3 class="text-center">המוזאון הארכיאולוגי כפ"ס - תעלומה מחומר אחר</h3>
-							<p><img class="img-responsive img-full" src="images/kfar_sava_cover.jpg" alt=""/>
+							<h3 class="text-center modal-header">המוזאון הארכיאולוגי כפר סבא - תעלומה מחומר אחר</h3>
+							<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<p class="quest-description-inner">
 							תעלומה מחומר אחר הוא משחק בלשי משפחתי המתרחש ברחבי המוזאון הארכאולוגי בכפר סבא.
 							מה הוא החומר האחר?
 							מה משותף למוצגים הרדופים?
 							<br/>
-							בואו לנסות!
-						</p>												 							 
+							בואו לנסות!							</p>	
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<img class="img-responsive img-full" src="images/kfar_sava_cover.jpg" alt=""/>
+							</div>			 							 
+							
 					 </div>
+					 
+					</div>
 					</div>
 				  </div>
 				</div>

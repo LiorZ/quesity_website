@@ -18,7 +18,6 @@ body {
     color: #fff;
 	font-size: 16px;
 	line-height:1.8em;
-	padding-top:90px;
 }
 
 p {
@@ -47,7 +46,7 @@ a:active, a:visited {
 
 .fullSection {
 	min-height:100%;
-	padding:100px 0;
+	padding:6em 0;
 	    -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -278,7 +277,7 @@ a:active, a:visited {
 
 #fullscreen-slider .slider-caption {
 	text-align:center;
-	padding:60px 140px 140px;
+	padding:1em 8em 2em;
 }
 
 #fullscreen-slider .slider-caption { 
@@ -443,7 +442,6 @@ a:hover .img_overlay {
 }
 
 .modal-header .close {
-	font-size:42px;
 	color:#fff;
 	opacity:1;
 	font-weight:normal;
@@ -458,7 +456,6 @@ a:hover .img_overlay {
 }
 
 .modal-body img {
-	margin:10px 0;
 }
 
 .modal-body img.pull-left {
@@ -539,7 +536,7 @@ ul.social-link li a:hover{
 }
 
 ul.social-link li a i{
-	font-size:30px;
+	font-size:5em;
 }
 
 
@@ -675,3 +672,27 @@ ul.social-link li a i{
     align-items: center;
 }
 
+.quest-description-inner {
+	font-size:1.5em;
+}
+
+.modal-image-container {
+	padding-right:1em;
+	margin-bottom: 1em;
+}
+
+.quest-description {
+	font-size:1.3em;
+}
+
+.modal-header {
+	margin-bottom:1em;
+}
+
+.carousel-bg-settings {
+	
+	background-color: rgba(0,0,0,0.7);
+	border:1px solid rgba(0,0,0,0.7);
+	border-radius:30px;
+	
+}
