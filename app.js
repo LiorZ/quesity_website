@@ -39,6 +39,9 @@ app.configure(function() {
 
 
 app.get('/', function (req, res) {
+    res.render('index-default-eng.html');
+});
+app.get('/he', function (req, res) {
     res.render('index-default-heb.html');
 });
 
