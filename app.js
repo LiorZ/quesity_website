@@ -2,6 +2,19 @@ var express = require('express');
 var http = require("http");
 var _ = require('underscore')
 var engine = require('jade');
+var captcha = require('captcha');
+
+
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'quesitywebsite@gmail.com',
+        pass: 'QuesityGugi'
+    }
+});
+
+
 var MemoryStore = express.session.MemoryStore;
 var app = express();
 var fs = require('fs');
@@ -35,6 +48,7 @@ app.configure(function() {
 	app.use(express.static(__dirname + '/public'));
 	app.engine('html', require('ejs').renderFile);
 	app.use(express.bodyParser());
+	app.use(captcha({ url: '/captcha.jpg', color:'#ffffff', background: 'rgba(20,30,200,0)' }));
 });
 
 
@@ -47,6 +61,25 @@ app.get('/he', function (req, res) {
 
 app.get('*',function(req,res) {
 	res.redirect('/');
+})
+
+app.post('/contactus' , function(req,res,next) {
+	console.log(req.body.captcha);
+	console.log(req.session.captcha);
+	var email = req.body.email;
+	var name = req.body.name;
+	var message = req.body.message;
+	if ( req.session.captcha != req.body.captcha ) {
+		res.send(401);
+		return;
+	}
+	
+	transporter.sendMail({
+	    to: 'general@quesity.com',
+	    subject: 'Message from Quesity Website',
+	    text: "Message from " + name + " ( email: " +email +")" + "\n" + message
+	});
+	res.send(200);
 })
 app.listen(port);
 console.log('Listening on port 3000');

@@ -331,44 +331,42 @@
 					<!-- contact form -->
 					<div class="col-md-6 col-sm-6">
 						<div class="contact-form">
-						<form role="form">
+						<form>
 							<div class="form-group">
 								<label>שם</label>
-								<input type="text" class="form-control">
+								<input id="contact_fullname" type="text" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>כתובת מייל</label>
-								<input type="email" class="form-control">
+								<label>אימייל</label>
+								<input id="contact_email" type="email" class="form-control">
 							</div>
 							<div class="form-group">
 								<label>הודעה</label>
-								<textarea class="form-control" rows="7"></textarea>
+								<textarea id="contact_message" class="form-control" rows="7"></textarea>
+							</div>
+							<div class="form-group">
+								<div class="row">
+								<div class="col-md-3 col-sm-3">
+									<button style="font-family: FontAwesome;"  type="button" id="contact_refresh_image" class="btn btn-custom btn-lg analytics-btn" data-analytics="Captcha Refresh">&#xf021;</button>
+								</div>
+								<div class="col-md-3 col-sm-3" style="">
+									<img src="/captcha.jpg" id="img_captcha" style="width:100%;"/>
+								</div>
+								<div class="col-md-6 col-sm-6">
+									<label>מלא את ה CAPTCHA:</label>
+									<input id="contact_captcha" type="text" class="form-control"/>
+								</div>
+								</div>
+								
+								
 							</div>
 							<div class="pull-right">
-							<button type="submit" data-analytics="Contact us - Submit button" class="btn btn-custom btn-lg analytics-btn">שלח</button>
+							<button type="button" data-analytics="Contact us - Submit button" class="btn btn-custom btn-lg analytics-btn" id="contact_submit">Submit</button>
 							</div>
 						</form>
 						<div class="clearfix"></div>
 						</div>
 					</div>
-					<!-- ./contact form -->
-					
-					<!-- address -->
-					<div class="col-md-6 col-sm-6">
-						<div class="social" style="text-align:center;">
-							<h2>חפשו אותנו ברשתות החברתיות</h2>
-							<ul class="social-link">
-								<li><a target="_blank" href="https://www.facebook.com/quesityapp"><i class="fa fa-facebook analytics-btn" data-analytics="Facebook Button"></i></a></li>
-								<li><a target="_blank" href="https://twitter.com/Quesity"><i class="fa fa-twitter analytics-btn" data-analytics="Twitter Button"></i></a></li>
-								<li><a target="_blank" href="https://www.linkedin.com/company/5254659"><i class="fa fa-linkedin analytics-btn" data-analytics="LinkedIn Button"></i></a></li>
-								<li><a target="_blank" href="https://plus.google.com/+QuesityApp"><i class="fa fa-google-plus analytics-btn" data-analytics="Google Plus Button"></i></a></li>
-							</ul>
-						</div>
-						
-					</div>
-					<!-- ./address -->
-					
-				</div>
 				<!-- /row -->
 									
 			</div>
@@ -407,6 +405,8 @@
 		<!-- main -->
 		<script src="js/main.js"></script>
 		<script src="js/analytics.js"></script>
+		<script src="js/contactus.js"></script>
+		
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
