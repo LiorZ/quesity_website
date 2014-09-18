@@ -2,8 +2,6 @@ var express = require('express');
 var http = require("http");
 var _ = require('underscore')
 var engine = require('jade');
-var captcha = require('captcha');
-
 
 var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
@@ -48,7 +46,6 @@ app.configure(function() {
 	app.use(express.static(__dirname + '/public'));
 	app.engine('html', require('ejs').renderFile);
 	app.use(express.bodyParser());
-	app.use(captcha({ url: '/captcha.jpg', color:'#ffffff', background: 'rgba(20,30,200,0)' }));
 });
 
 
@@ -64,16 +61,12 @@ app.get('*',function(req,res) {
 })
 
 app.post('/contactus' , function(req,res,next) {
-	console.log(req.body.captcha);
-	console.log(req.session.captcha);
 	var email = req.body.email;
 	var name = req.body.name;
 	var message = req.body.message;
-	if ( req.session.captcha != req.body.captcha ) {
+	if ( message == undefined || name == undefined || email == undefined ) {
 		res.send(401);
-		return;
 	}
-	
 	transporter.sendMail({
 	    to: 'general@quesity.com',
 	    subject: 'Message from Quesity Website',
