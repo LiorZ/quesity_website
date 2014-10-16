@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function() { 
+		
+			$('.btn_delete_article').click(function(btn) {
+				var id = $(this).attr('data-article-id');
+				var parent_tr = $(this).closest('tr');
+				$.post('/googi/delete_article/'+id).done(function(){
+					parent_tr.remove();
+				}).fail(function(){
+					alert("Failed to delete");
+				});
+			});
+		} );
+		
+	</script>
+	
+		<style type="text/css">
+		</style>
+		<title>List Of Articles</title>
+	</head>
+<body>
+	<% if (typeof articles != 'undefined') { %>
+	<h1 style="text-align:center;">Article list</h1>
+	<table style="margin-left:auto; margin-right:auto;">
+	
+	
+	<%for (var i=0; i<articles.length; ++i) {%>
+		<tr>
+			<td><a href="/googi/article/<%=articles[i]._id%>"><%= articles[i].title %></a></td> 
+			<td><button class="btn_delete_article" data-article-id="<%=articles[i]._id%>">Delete</button></td>
+		</tr>
+	<%}%>
+	</table>
+	<%} else {%>
+	
+		<h1>No articles</h1>
+	<%}%>
+</body>
+</html>

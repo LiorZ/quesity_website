@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			input,textarea {
+				display:block;
+				margin-bottom:1em;
+			}
+		</style>
+		<title>Submit new article</title>
+	</head>
+<body>
+	<span style="color:red"><% if (typeof err_message != 'undefined' ) { %> <%=err_message%> <%}%> </span>
+	<form action="<%if (typeof edit_mode != 'undefined'){%>/googi/edit_article/<%=article._id%><%}else{%>/googi/new_article<%}%>" method="POST">
+		<label for="title">Title for news article:</label>
+		<input type="text" name="title" value="<%=article.title||''%>"/>
+		<label for="title">Short Text: </label>
+		<input type="text" name="short_text" value="<%=article.short_text || ''%>"/>
+		<label for="long_text">
+			Article Body:
+		</label><br/>
+		<textarea rows=20 cols=50 name='long_text'><%=article.long_text || '' %></textarea>
+		<label for="img">Image address (800x600):</label>
+		<input type="text" name="img" value="<%= article.img || '' %>"/>
+		<input type="submit"/>
+	</form>	
+</body>
+</html>

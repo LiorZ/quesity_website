@@ -150,7 +150,63 @@
 			</div>
 		</div>
 		
+		<% if (typeof articles != 'undefined' ) { %>
+		
+			<div id="articles" class="fullSection">
+			<div class="container">
+			
+				<div class="section-heading">
+					<h2>מה חדש בקווסיטי?</h2>
+				</div>
+				
+				<!-- featured-list -->	
+				<div id="articles-list" class="owl-carousel carousel-bg-settings" style="direction: ltr;">
+					<% for (var i =0; i<articles.length; ++i) { %>
+					<div class="featured-box item text-center">
+						<img class="img-responsive img-thumbnail" src="<%=articles[i].img%>" alt="">
+						<div class="featured-info" style="direction:rtl;">								
+							<h2><%=articles[i].title%></h2>
+							<p class="quest-description"><%= articles[i].short_text %></p>
+							<br/>
+							<a href="#" data-analytics="<%=articles[i].title%>" class="btn btn-custom analytics-btn" data-toggle="modal" data-target="#<%=articles[i]._id%>">קרא עוד</a>	
+						</div>
+					</div>
+					<%}%>
+					
+				</div>
+				
+				
+				
+				<!-- articles modal -->
+				<% for(var i=0; i<articles.length; ++i) {%>
+				<div class="modal fade" id="<%= articles[i]._id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+				  <div class="modal-dialog modal-lg">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					  </div>
+					  <div class="modal-body">
+							<h2 class="text-center modal-header"><%=articles[i].title%></h2>
+							<div class="row">
+							<div class="col-md-6 col-sm-6">
+							<p class="quest-description-inner">
+							<%=articles[i].long_text%>
+						</p>
+						</div>			
+						<div class="col-md-6 col-sm-6 modal-image-container">
+								<img class="img-responsive img-full" src="<%=articles[i].img%>" alt=""/>
+						</div>									 							 
+					 </div>
+					</div>
+				  </div>
+				</div>
+				</div>
+				<%}%>
+				
+		</div>
+		</div>
 		<!-- featured -->
+		<% }%>
 		<div id="featured" class="fullSection">
 			<div class="container">
 			
@@ -164,7 +220,7 @@
 					<div class="featured-box item text-center">
 						<img class="img-responsive img-thumbnail" src="images/mini-israel.jpg" alt="">
 						<div class="featured-info">								
-							<h2>המסע של צביקה</h2>
+							<h2 >המסע של צביקה</h2>
 							<h3>מיני ישראל</h3>
 							<p class="quest-description">עזרו לצביקה בחיפושיו אחרי אחיו ברחבי (מיני) ישראל</p>
 							<br/>

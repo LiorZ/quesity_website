@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body {
+				height:100%;
+				width:100%;
+			}
+		</style>
+		<title>Login to Quesity Website Admin</title>
+	</head>
+	<body>
+	<table style="height:99%; width:99%;">
+		<tr>
+			<td style="vertical-align: middle;">
+	<div id='login_container' style="text-align:center;">
+	<span id="err_message" style="color:red;">
+	<% if ( typeof err_message != 'undefined' ) { %> 
+		<%= err_message %>
+	<% } %>
+	</span>
+	
+	<form action="/googi/login" method="post">
+		<label for="password">Password: </label>
+		<input type="password" name="password"/>
+		<input type="submit"/>
+	</form>
+	</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -2,8 +2,11 @@ var express = require('express');
 var http = require("http");
 var _ = require('underscore')
 var engine = require('jade');
-
+var fs = require('fs');
+var mongoose = require('mongoose')
 var nodemailer = require('nodemailer');
+var nconf = require('nconf');
+var models = require('./models')(mongoose);
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -15,11 +18,27 @@ var transporter = nodemailer.createTransport({
 
 var MemoryStore = express.session.MemoryStore;
 var app = express();
-var fs = require('fs');
 var supported_langs = { eng:1 , heb:1 };
 var lang_params = {};
 
-var port = process.env.PORT || 3000;
+
+nconf.defaults({
+	mode:'development'
+});
+var options = {
+		production:{
+			db_address: 'mongodb://googi:QuesityForever@linus.mongohq.com:10058/app21939361',
+			port:process.env.PORT,
+		},
+		development: {
+			db_address:'mongodb://localhost/quesity_website',
+			port:3000,
+		}		
+};
+
+var configuration = options[nconf.get('mode')];
+
+console.log("Connecting through " + nconf.get('mode') + " mode");
 
 function readJsonFileSync(filepath, encoding){
 
@@ -35,30 +54,35 @@ var load_lang_vars = function() {
 		lang_params[l] = readJsonFileSync('views/'+l+'/vars.json');
 	}).value();
 };
+
+
 app.configure(function() {
 	app.use(express.cookieParser());
 	app.use(express.session({
 	    store: new MemoryStore(),
 	    secret: 'Lior&Tomer',
 	}));
-	app.set('views', __dirname + '/public');
+	app.use(express.bodyParser());
+	app.set('views', __dirname + '/ejs_views');
+	app.set('view engine', 'ejs');
 	app.set("view options", {layout: false});
 	app.use(express.static(__dirname + '/public'));
 	app.engine('html', require('ejs').renderFile);
-	app.use(express.bodyParser());
+	mongoose.connect(configuration.db_address);	
 });
+require('./admin')(app,models);
 
 
 app.get('/', function (req, res) {
     res.render('index-default-eng.html');
 });
 app.get('/he', function (req, res) {
-    res.render('index-default-heb.html');
+	models.NewsArticle.find({},function(err,doc) {
+		res.render('index-default-heb',{articles: doc});
+	}).sort({date_created:-1}).limit(10);
+    
 });
 
-app.get('*',function(req,res) {
-	res.redirect('/');
-})
 
 app.post('/contactus' , function(req,res,next) {
 	var email = req.body.email;
@@ -74,5 +98,5 @@ app.post('/contactus' , function(req,res,next) {
 	});
 	res.send(200);
 })
-app.listen(port);
+app.listen(configuration.port);
 console.log('Listening on port 3000');

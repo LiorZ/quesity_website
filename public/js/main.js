@@ -33,7 +33,7 @@ $(function() {
 			
 $(document).ready(function() {
  
-	$("#featured-list").owlCarousel({
+	$("#featured-list, #articles-list").owlCarousel({
  
 		items : 4, //4 items above 1000px browser width
 		itemsDesktop : [1000,4], //4 items between 1000px and 901px
