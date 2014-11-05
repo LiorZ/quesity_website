@@ -79,7 +79,7 @@ module.exports = function(app,models) {
 		if ( !article_id ) {
 			res.send(401);
 		}
-		
+		console.log(req.body.long_text);
 		NewsArticle.update({_id:article_id},req.body,function(err,doc) {
 			if (err){
 				res.send(401);

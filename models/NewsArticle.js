@@ -5,7 +5,9 @@ module.exports = function(mongoose) {
 		date_created:{type:Date, 'default':Date.now},
 		title: {type:String},
 		short_text: {type:String},
-		long_text:{type:String},
+		long_text:{type:String, set:function(text) {
+			return text.replace('\n','<br/>');
+		}},
 		img: {type:String},
 		
 		
