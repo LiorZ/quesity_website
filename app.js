@@ -21,6 +21,7 @@ var app = express();
 var supported_langs = { eng:1 , heb:1 };
 var lang_params = {};
 
+nconf.argv().env();
 
 nconf.defaults({
 	mode:'development'
