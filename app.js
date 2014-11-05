@@ -99,4 +99,4 @@ app.post('/contactus' , function(req,res,next) {
 	res.send(200);
 })
 app.listen(configuration.port);
-console.log('Listening on port 3000');
+console.log('Listening on port ' + configuration.port);
