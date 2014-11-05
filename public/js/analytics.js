@@ -9,6 +9,6 @@ $(document).ready(function() {
 		if ( btn_type == undefined ) {
 			return;
 		}
-		//ga('send', 'event', 'button', 'click', btn_type);
+		ga('send', 'event', 'button', 'click', btn_type);
 	});
 })
