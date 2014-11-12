@@ -73,7 +73,6 @@ app.configure(function() {
 });
 require('./admin')(app,models);
 
-
 app.get('/', function (req, res) {
     res.render('index-default-eng.html');
 });
